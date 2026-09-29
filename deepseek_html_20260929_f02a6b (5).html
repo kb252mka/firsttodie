@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#c1121f"/>
+<title>FIRST TO DIE — Kyiv Hardcore | Official Store</title>
+<link rel="icon" href="https://i.postimg.cc/50YMWyV1/zobrazenna-2026-09-26-020404764-removebg-preview.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@300;400;700;800&family=Cinzel+Decorative:wght@700;900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+:root{--bg:#050505;--text:#f5f5f5;--border:#1a1a1a;--blood:#c1121f;--acid:#c9f31a;--panel:#080808;--muted:#666}
+body.light-mode{--bg:#f5f5f5;--text:#0a0a0a;--border:#d4d4d4;--panel:#fff;--muted:#777}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospace;overflow-x:hidden;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s;-webkit-tap-highlight-color:transparent;padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);font-size:14px;line-height:1.5}
+body.no-scroll{overflow:hidden}
+.gothic{font-family:'Cinzel Decorative',serif;font-weight:900;letter-spacing:.02em}
+.display{font-family:'Archivo Black',sans-serif;letter-spacing:-.02em}
+.noise-bg{background-image:radial-gradient(circle at 20% 30%,rgba(193,18,31,.04) 0,transparent 40%),linear-gradient(180deg,var(--bg),var(--panel))}
+.grid-bg{background-image:linear-gradient(rgba(128,128,128,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(128,128,128,.05) 1px,transparent 1px);background-size:40px 40px}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.marquee-track{display:flex;animation:marquee 40s linear infinite;white-space:nowrap;width:max-content}
+.header-icon{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:8px;flex-shrink:0;background:transparent;border:none;cursor:pointer;transition:color .2s,transform .15s;color:var(--muted)}
+.header-icon:hover{color:var(--text)}
+.header-icon:active{transform:scale(.9)}
+.header-icon svg{pointer-events:none}
+@media (min-width:768px){.header-icon{width:36px;height:36px;padding:6px}}
+.mobile-menu-btn{display:flex;align-items:center;justify-content:center;padding:12px 10px;min-height:44px;font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--text);background:transparent;border:1px solid var(--border);cursor:pointer;transition:all .2s}
+.mobile-menu-btn:hover,.mobile-menu-btn:active{border-color:var(--blood);background:rgba(193,18,31,.1)}
+.mobile-menu-select{width:100%;min-height:44px;padding:10px 36px 10px 12px;font-family:'JetBrains Mono',monospace;font-size:.75rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--text);background:transparent;border:1px solid var(--border);outline:none;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.2}}
+.pulse-dot{animation:pulse-dot 1.2s ease-in-out infinite}
+.product-card{position:relative;background:var(--panel);border:1px solid var(--border);overflow:hidden;transition:border-color .3s,box-shadow .3s}
+.product-card:hover{border-color:var(--blood);box-shadow:0 0 0 1px rgba(193,18,31,.4)}
+.product-card .img-a,.product-card .img-b{transition:opacity .5s,transform .8s}
+.product-card .img-b{opacity:0}
+.product-card:hover .img-a{opacity:0}
+.product-card:hover .img-b{opacity:1;transform:scale(1.06)}
+.quick-add{opacity:0;transform:translateY(8px);transition:all .3s}
+.product-card:hover .quick-add{opacity:1;transform:translateY(0)}
+.btn-brut{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.75rem 1.5rem;min-height:44px;font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;background:#f5f5f5;color:#050505;border:2px solid #f5f5f5;cursor:pointer;transition:all .15s;text-decoration:none}
+.btn-brut:hover:not(:disabled){background:var(--blood);color:#fff;border-color:var(--blood)}
+.btn-brut:active:not(:disabled){transform:scale(.97)}
+.btn-brut:disabled{opacity:.3;cursor:not-allowed}
+.btn-brut.loading{pointer-events:none;opacity:.7}
+.btn-ghost{background:transparent;color:var(--text);border:2px solid var(--border)}
+.btn-ghost:hover:not(:disabled){background:var(--blood);color:#fff;border-color:var(--blood)}
+.tg-btn{background:#229ED9;border-color:#229ED9;color:#fff}
+.tg-btn:hover:not(:disabled){background:#1a8bc4;border-color:#1a8bc4}
+.badge-tag{display:inline-block;font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.3rem .6rem;border:1px solid #fff;background:#050505;color:#fff}
+.badge-new{background:var(--acid);border-color:var(--acid);color:#050505}
+.cart-drawer{transition:transform .4s cubic-bezier(.4,0,.2,1)}
+.cart-drawer.closed{transform:translateX(100%)}
+.cart-drawer.open{transform:translateX(0)}
+.cart-overlay{transition:opacity .4s}
+.search-overlay{position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:100;opacity:0;pointer-events:none;transition:opacity .3s;overflow-y:auto}
+.search-overlay.open{opacity:1;pointer-events:auto}
+.search-input{background:transparent;border:none;border-bottom:2px solid #333;color:#fff;font-size:2rem;font-family:'Archivo Black',sans-serif;padding:1rem 0;width:100%;outline:none}
+.search-input::placeholder{color:#333}
+.search-input:focus{border-color:var(--blood)}
+.search-result{display:flex;gap:1rem;padding:1rem;border-bottom:1px solid var(--border);cursor:pointer;transition:background .2s;align-items:center}
+.search-result:hover{background:rgba(128,128,128,.05);border-left:2px solid var(--blood)}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.98);z-index:200;opacity:0;pointer-events:none;transition:opacity .3s;display:flex;align-items:center;justify-content:center}
+.lightbox.open{opacity:1;pointer-events:auto}
+.lightbox img{max-width:90vw;max-height:85vh;object-fit:contain;border:1px solid #1a1a1a}
+.lightbox-btn{position:absolute;background:rgba(0,0,0,.7);border:1px solid #333;color:#fff;width:48px;height:48px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;z-index:10}
+.lightbox-btn:hover{background:var(--blood);border-color:var(--blood)}
+.toast-container{position:fixed;bottom:2rem;right:2rem;z-index:150;display:flex;flex-direction:column;gap:.5rem;pointer-events:none;max-width:90vw}
+.toast{background:#0a0a0a;border:1px solid var(--blood);padding:.75rem 1rem;min-width:240px;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:#fff;display:flex;align-items:center;gap:.75rem;pointer-events:auto;transform:translateX(120%);transition:transform .4s;box-shadow:0 10px 40px rgba(0,0,0,.6)}
+.toast.show{transform:translateX(0)}
+.toast .toast-close{background:transparent;border:none;color:#666;cursor:pointer;padding:0 0 0 .5rem;font-size:14px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:120;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity .3s;overflow-y:auto}
+.modal.open{opacity:1;pointer-events:auto}
+.modal-content{background:var(--panel);border:1px solid var(--border);max-width:600px;width:100%;max-height:92vh;overflow-y:auto;position:relative;color:var(--text);-webkit-overflow-scrolling:touch}
+.form-input{width:100%;background:transparent;border:2px solid var(--border);color:var(--text);padding:.75rem 1rem;font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.1em;outline:none;transition:border-color .2s;min-height:44px}
+.form-input:focus{border-color:var(--blood)}
+.form-input::placeholder{color:var(--muted);text-transform:uppercase;font-size:.7rem}
+.form-input.error{border-color:#e63946;background:rgba(230,57,70,.05)}
+.form-label{display:block;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;font-weight:700}
+.size-option{padding:.6rem;border:2px solid var(--border);color:var(--text);font-weight:700;cursor:pointer;transition:all .2s;background:transparent;font-family:'JetBrains Mono',monospace;font-size:.75rem;min-height:44px;min-width:44px}
+.size-option:hover{border-color:var(--blood)}
+.size-option:active{transform:scale(.95)}
+.size-option.active{background:var(--blood);border-color:var(--blood);color:#fff}
+.album-row{transition:all .2s;border-left:2px solid transparent;border-bottom:1px solid var(--border);cursor:pointer;text-align:left;background:transparent;width:100%;color:inherit}
+.album-row:hover{background:rgba(128,128,128,.05)}
+.album-row.active{background:rgba(193,18,31,.1);border-left-color:var(--blood)}
+.arrow-slide{display:inline-block;transition:transform .2s}
+a:hover .arrow-slide{transform:translateX(4px)}
+::-webkit-scrollbar{width:8px;height:8px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spinner{width:16px;height:16px;border:2px solid rgba(0,0,0,.3);border-top-color:#000;border-radius:50%;animation:spin .6s linear infinite;display:inline-block}
+.wish-btn.active{background:var(--blood)!important;border-color:var(--blood)!important}
+.clip-angle{clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%)}
+:focus-visible{outline:2px solid var(--blood);outline-offset:3px;border-radius:2px}
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;background:#0a0a0a;border-top:2px solid var(--blood);padding:1rem;z-index:500;transform:translateY(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);padding-bottom:calc(1rem + env(safe-area-inset-bottom))}
+.cookie-banner.show{transform:translateY(0)}
+#backToTop{position:fixed;bottom:6rem;right:2rem;width:48px;height:48px;background:var(--blood);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(20px);transition:all .3s;z-index:90;pointer-events:none}
+#backToTop.show{opacity:1;transform:translateY(0);pointer-events:auto}
+.breadcrumbs{display:flex;gap:.5rem;align-items:center;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.5rem;flex-wrap:wrap}
+.order-page{position:fixed;inset:0;background:var(--bg);z-index:300;display:none;overflow-y:auto}
+.order-page.show{display:block}
+.ftd-logo{filter:brightness(0) invert(1);object-fit:contain;user-select:none;-webkit-user-drag:none}
+body.light-mode .ftd-logo{filter:brightness(0)}
+body.light-mode .btn-brut{background:#0a0a0a;color:#fff;border-color:#0a0a0a}
+body.light-mode .btn-brut:hover{background:var(--blood);border-color:var(--blood)}
+.hero-logo-wrap{display:none;position:relative}
+.hero-logo{width:100%;max-width:480px;height:auto;display:block;filter:brightness(0) invert(1);user-select:none;-webkit-user-drag:none;pointer-events:none}
+body.light-mode .hero-logo{filter:brightness(0)}
+@media (min-width:768px){
+  .hero-logo-wrap{display:block;margin:0 auto 1.5rem;max-width:520px;padding:0 1rem;animation:breathe 8s ease-in-out infinite}
+  .hero-logo{max-width:100%;animation:logoFadeIn 1.4s cubic-bezier(.2,.9,.3,1) both}
+}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.006)}}
+@keyframes logoFadeIn{
+  0%{opacity:0;transform:translateY(24px) scale(.96);filter:brightness(0) invert(1) blur(12px)}
+  60%{opacity:1;filter:brightness(0) invert(1) blur(0)}
+  100%{opacity:1;transform:translateY(0) scale(1);filter:brightness(0) invert(1)}
+}
+.hero-logo-wrap:hover .hero-logo{
+  filter:brightness(0) invert(1) drop-shadow(0 0 20px rgba(193,18,31,.5));
+  animation:logoHoverGlitch .45s ease-in-out;
+}
+@keyframes logoHoverGlitch{
+  0%{transform:translate(0)}
+  15%{transform:translate(-2px,1px)}
+  30%{transform:translate(2px,-1px)}
+  45%{transform:translate(-1px,-2px)}
+  60%{transform:translate(1px,2px)}
+  100%{transform:translate(0)}
+}
+@media (min-width:1280px){.hero-logo-wrap{max-width:640px;margin-bottom:2rem}}
+@media (prefers-reduced-motion:reduce){.hero-logo-wrap,.hero-logo{animation:none!important}}
+.mobile-menu{max-height:0;overflow:hidden;opacity:0;transition:max-height .35s,opacity .25s;display:none}
+.mobile-menu.open{display:block;max-height:800px;opacity:1}
+@media (hover:none),(pointer:coarse){.quick-add{opacity:1!important;transform:none!important}.product-card .img-b{display:none}.product-card:hover .img-a{opacity:1}#ftdControls{opacity:1!important}}
+@media (max-width:767px){
+  header .h-16{height:60px!important}
+  .header-icon{width:38px;height:38px;padding:7px}
+  .ftd-logo{height:24px!important}
+  .marquee-track span{font-size:.55rem;letter-spacing:.22em;margin:0 1rem}
+  .marquee-track{animation-duration:60s}
+  .gothic.text-6xl{font-size:1.85rem!important;line-height:1!important}
+  .gothic.text-5xl{font-size:1.7rem!important}
+  .gothic.text-4xl{font-size:1.55rem!important}
+  .gothic.text-3xl{font-size:1.3rem!important}
+  section .py-14,section .py-24{padding-top:2.25rem;padding-bottom:2.25rem}
+  section .py-12,section .py-20{padding-top:1.75rem;padding-bottom:1.75rem}
+  .breadcrumbs{font-size:.55rem;gap:4px;margin-bottom:1rem}
+  #catalogGrid{grid-template-columns:repeat(2,1fr)!important;gap:8px!important}
+  .product-card h3{font-size:.68rem!important;line-height:1.25!important}
+  .product-card .p-4{padding:.55rem .65rem}
+  .product-card .quick-add .btn-brut{padding:8px 4px;font-size:.55rem;min-height:36px}
+  #galleryGrid{grid-auto-rows:140px!important;gap:6px!important}
+  .modal{padding:0;align-items:flex-end}
+  .modal-content{max-height:94vh;border-radius:16px 16px 0 0;max-width:100%!important;padding-bottom:env(safe-area-inset-bottom)}
+  .modal-content > div:first-child{padding:1rem 1rem .75rem!important}
+  .modal-content .p-6{padding:1rem!important}
+  #closeProductBtn,#closeSizeBtn,#closeCheckoutBtn,#closeCartBtn,#closeSearchBtn,#closeSizeGuideBtn{min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}
+  #productModal .grid{grid-template-columns:1fr!important}
+  #productModal .modal-content > div:last-child{padding:1rem!important}
+  #prodModalPrice{font-size:1.4rem!important}
+  #sizeOptions{grid-template-columns:repeat(4,1fr)!important;gap:6px!important}
+  .size-option{padding:8px 4px!important;font-size:.7rem!important}
+  .search-input{font-size:1.35rem!important;padding:.75rem 0!important}
+  #cartDrawer{max-width:100%!important;padding-top:env(safe-area-inset-top)}
+  #cartDrawer > div:last-child{padding-bottom:calc(1.5rem + env(safe-area-inset-bottom))!important}
+  #checkoutForm .grid-cols-2{grid-template-columns:1fr!important;gap:12px!important}
+  #checkoutForm .form-input{font-size:16px!important}
+  .toast-container{left:1rem;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom));max-width:none}
+  .toast{min-width:0;width:100%;font-size:.65rem;padding:.6rem .75rem}
+  #backToTop{bottom:1rem;right:1rem;width:44px;height:44px}
+  .cookie-banner{padding:.75rem}
+  .cookie-banner p{font-size:.65rem}
+  .cookie-banner .btn-brut{min-height:40px;padding:8px 14px;font-size:.6rem}
+  #ftdProgressWrap{padding:8px 0}
+  #ftdToggle,#ftdMute,#ftdFs{min-width:40px;min-height:40px}
+  .order-page .py-16,.order-page .py-24{padding-top:1.75rem!important;padding-bottom:1.75rem!important}
+  footer .py-12,footer .py-16{padding-top:2rem!important;padding-bottom:2rem!important}
+  .size-guide-table th,.size-guide-table td{padding:.5rem .4rem!important;font-size:.6rem!important}
+  .tracklist-row{padding:.6rem .75rem!important}
+  .tracklist-row span:first-child{font-size:.55rem!important;min-width:20px!important}
+  .tracklist-row span:nth-child(2){font-size:.68rem!important}
+  .tracklist-row span:last-child{font-size:.55rem!important}
+}
+@media (min-width:768px) and (max-width:1023px){.ftd-logo{height:32px!important}#catalogGrid{grid-template-columns:repeat(3,1fr)!important;gap:14px!important}#galleryGrid{grid-auto-rows:190px!important}.gothic.text-6xl{font-size:3.25rem!important}}
+@media (min-width:1024px) and (max-width:1279px){#catalogGrid{grid-template-columns:repeat(4,1fr)!important;gap:16px!important}#galleryGrid{grid-auto-rows:210px!important}}
+@media (min-width:1280px) and (max-width:1599px){#catalogGrid{grid-template-columns:repeat(4,1fr)!important;gap:20px!important}}
+@media (min-width:1600px){body{font-size:15px}#catalogGrid{grid-template-columns:repeat(4,1fr)!important;gap:22px!important}#galleryGrid{grid-auto-rows:260px!important}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}.marquee-track{animation:none!important}}
+</style>
+</head>
+<body>
+
+<div class="bg-[#c1121f] text-white py-1.5 border-b-2 border-[#c1121f] overflow-hidden">
+  <div class="marquee-track text-[0.65rem] font-bold tracking-[0.3em] uppercase">
+    <span class="mx-6">▲ FIRST TO DIE — KYIV HARDCORE ▲</span>
+    <span class="mx-6">■ ПЕРШОЗДОХЛІ ПИЗДУЮТЬ — OUT NOW ■</span>
+    <span class="mx-6">▲ NO CURE FOR THE WEAK ▲</span>
+    <span class="mx-6">▲ FIRST TO DIE — KYIV HARDCORE ▲</span>
+    <span class="mx-6">■ ПЕРШОЗДОХЛІ ПИЗДУЮТЬ — OUT NOW ■</span>
+    <span class="mx-6">▲ NO CURE FOR THE WEAK ▲</span>
+  </div>
+</div>
+
+<header class="sticky top-0 z-40 border-b" style="background:#050505;border-color:var(--border)">
+  <div class="max-w-[1600px] mx-auto px-3 md:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20 gap-2">
+      <div class="flex items-center flex-1 min-w-0">
+        <button id="hamburgerBtn" class="header-icon md:hidden" aria-label="Меню">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
+        <nav class="hidden md:flex items-center gap-5 text-[0.65rem] font-bold tracking-[0.2em] uppercase" style="color:var(--muted)">
+          <a href="#catalog" class="hover:text-[#c1121f] transition-colors">Store</a>
+          <a href="#music" class="hover:text-[#c1121f] transition-colors">Music</a>
+          <a href="#gallery" class="hover:text-[#c1121f] transition-colors">Gallery</a>
+          <a href="#community" class="hover:text-[#c1121f] transition-colors">Community</a>
+        </nav>
+      </div>
+      <a href="#" id="logoLink" class="flex-shrink-0 flex items-center justify-center px-1 md:px-4">
+        <img src="https://i.postimg.cc/50YMWyV1/zobrazenna-2026-09-26-020404764-removebg-preview.png" alt="FIRST TO DIE" class="ftd-logo h-6 md:h-10 w-auto"/>
+      </a>
+      <div class="flex items-center justify-end flex-1 min-w-0 gap-0.5 md:gap-2">
+        <button id="themeBtn" class="header-icon hidden md:inline-flex" aria-label="Тема">
+          <svg id="iconMoon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="iconSun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden"><circle cx="12" cy="12" r="5"/></svg>
+        </button>
+        <button id="langBtn" class="header-icon hidden md:inline-flex text-[0.65rem] font-bold tracking-widest"><span id="langLabel">UA</span></button>
+        <button id="searchBtn" class="header-icon" aria-label="Пошук">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+        </button>
+        <button id="wishlistBtn" class="header-icon relative hidden md:inline-flex" aria-label="Обране">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span id="wishCountBadge" class="absolute top-0 right-0 bg-[#c1121f] text-white text-[0.55rem] font-black w-4 h-4 rounded-full flex items-center justify-center" style="display:none">0</span>
+        </button>
+        <select id="currencySelect" class="hidden md:block bg-transparent text-[0.65rem] font-bold tracking-widest border px-2 py-1 focus:outline-none cursor-pointer" style="color:var(--muted);border-color:var(--border)">
+          <option value="UAH" class="bg-black">₴ UAH</option><option value="USD" class="bg-black">$ USD</option><option value="EUR" class="bg-black">€ EUR</option>
+        </select>
+        <button id="cartBtn" class="header-icon relative" aria-label="Кошик">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span id="cartCount" class="absolute top-0 right-0 bg-[#c1121f] text-white text-[0.55rem] font-black w-4 h-4 rounded-full flex items-center justify-center" style="display:none">0</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobileMenu" class="mobile-menu md:hidden border-t" style="background:var(--bg);border-color:var(--border)">
+    <div class="px-5 py-5 flex flex-col gap-3 text-[0.75rem] font-bold tracking-[0.2em] uppercase" style="color:var(--muted)">
+      <a href="#catalog" class="py-2">Store</a>
+      <a href="#music" class="py-2">Music</a>
+      <a href="#gallery" class="py-2">Gallery</a>
+      <a href="#community" class="py-2">Community</a>
+      <div class="pt-4 mt-2 border-t grid grid-cols-2 gap-2" style="border-color:var(--border)">
+        <button id="themeBtnM" class="mobile-menu-btn">🎨 ТЕМА</button>
+        <button id="langBtnM" class="mobile-menu-btn">🌐 UA/EN</button>
+        <button id="wishlistBtnM" class="mobile-menu-btn col-span-2">❤ ОБРАНЕ (<span id="wishCountBadgeM">0</span>)</button>
+        <select id="currencySelectMobile" class="col-span-2 mobile-menu-select">
+          <option value="UAH" class="bg-black">₴ UAH</option>
+          <option value="USD" class="bg-black">$ USD</option>
+          <option value="EUR" class="bg-black">€ EUR</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="relative border-b overflow-hidden grid-bg" style="border-color:var(--border)">
+  <div class="max-w-[1600px] mx-auto px-4 md:px-8 py-10 md:py-20 relative">
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-[0.6rem] font-bold tracking-[0.3em] uppercase mb-6 md:mb-8" style="color:var(--muted)">
+      <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#c1121f] rounded-full pulse-dot"></span> KYIV · UA</span>
+      <span>EST. 2023</span><span>GRINDCORE / HARDCORE</span><span class="text-[#c1121f]">#FTD</span>
+    </div>
+    <div class="hero-logo-wrap">
+      <img src="https://i.postimg.cc/50YMWyV1/zobrazenna-2026-09-26-020404764-removebg-preview.png" alt="FIRST TO DIE" class="hero-logo" draggable="false"/>
+    </div>
+    <div class="max-w-2xl mb-8 md:mb-10">
+      <p class="text-sm md:text-base leading-relaxed mb-4" style="color:var(--muted)">Київський грайндкор. <span style="color:var(--text)">Без компромісів.</span> Без ілюзій.</p>
+      <p class="text-xs md:text-sm leading-relaxed" style="color:var(--muted)">Дебютний альбом <span class="text-[#c1121f]">"ПЕРШОЗДОХЛІ ПИЗДУЮТЬ"</span> — вже на всіх стрімінгових платформах.</p>
+    </div>
+    <div class="flex flex-wrap gap-3 mb-10 md:mb-12">
+      <a href="#catalog" class="btn-brut">SHOP MERCH <span class="arrow-slide">→</span></a>
+      <a href="#music" class="btn-brut btn-ghost">LISTEN</a>
+      <a href="https://open.spotify.com/artist/1cbGtPIT84DzV99EOCYtJC" target="_blank" rel="noopener" class="btn-brut btn-ghost">▶ SPOTIFY</a>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-px border max-w-3xl" style="background:var(--border);border-color:var(--border)">
+      <div class="p-4 md:p-5" style="background:var(--bg)"><p class="display text-2xl md:text-3xl">2023</p><p class="text-[0.55rem] tracking-[0.25em] uppercase mt-1" style="color:var(--muted)">Founded</p></div>
+      <div class="p-4 md:p-5" style="background:var(--bg)"><p class="display text-2xl md:text-3xl">48</p><p class="text-[0.55rem] tracking-[0.25em] uppercase mt-1" style="color:var(--muted)">Live Shows</p></div>
+      <div class="p-4 md:p-5" style="background:var(--bg)"><p class="display text-2xl md:text-3xl">5</p><p class="text-[0.55rem] tracking-[0.25em] uppercase mt-1" style="color:var(--muted)">Releases</p></div>
+      <div class="p-4 md:p-5" style="background:var(--bg)"><p class="display text-2xl md:text-3xl text-[#c1121f]">∞</p><p class="text-[0.55rem] tracking-[0.25em] uppercase mt-1" style="color:var(--muted)">Noise</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="border-b" style="border-color:var(--border)">
+  <div class="max-w-[1200px] mx-auto px-4 md:px-8 py-12 md:py-20">
+    <div class="flex items-center justify-between mb-8">
+      <div><p class="text-[0.6rem] tracking-[0.3em] uppercase text-[#c1121f] mb-2">// 01 — Visual</p><h2 class="gothic text-2xl md:text-4xl">WATCH</h2></div>
+      <a href="https://www.youtube.com/channel/UCFdiaRpsE5ppQ1WwXCY8hcw" target="_blank" rel="noopener" class="text-[0.65rem] font-bold tracking-[0.2em] uppercase hover:text-[#c1121f]" style="color:var(--muted)">YOUTUBE <span class="arrow-slide">→</span></a>
+    </div>
+    <div id="ftdVideoWrap" class="group relative border border-[#1a1a1a] bg-black overflow-hidden" style="aspect-ratio:16/9">
+      <video id="ftdVideo" class="absolute inset-0 w-full h-full object-cover" preload="metadata" playsinline controlslist="nodownload">
+        <source src="https://files.catbox.moe/0zjaw4.mp4" type="video/mp4" />
+      </video>
+      <button id="ftdPlayBtn" class="absolute inset-0 flex items-center justify-center bg-black/40 hover:bg-black/20 transition-colors">
+        <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#c1121f] flex items-center justify-center shadow-2xl">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+        </div>
+      </button>
+      <div id="ftdControls" class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+        <div class="flex items-center gap-3">
+          <button id="ftdToggle" class="text-white">
+            <svg id="ftdIconPlay" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+            <svg id="ftdIconPause" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="hidden"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </button>
+          <div id="ftdProgressWrap" class="flex-1 h-1 bg-white/20 cursor-pointer relative">
+            <div id="ftdProgress" class="h-full bg-[#c1121f] w-0"></div>
+          </div>
+          <span id="ftdTime" class="text-white text-[0.65rem] font-mono tracking-widest min-w-[80px] text-right">0:00 / 0:00</span>
+          <button id="ftdMute" class="text-white">
+            <svg id="ftdIconVol" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+            <svg id="ftdIconMuted" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+          </button>
+          <button id="ftdFs" class="text-white">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="music" class="border-b noise-bg" style="border-color:var(--border)">
+  <div class="max-w-[1600px] mx-auto px-4 md:px-8 py-14 md:py-24">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+      <div><p class="text-[0.6rem] tracking-[0.3em] uppercase text-[#c1121f] mb-2">// 02 — Discography</p><h2 class="gothic text-4xl md:text-6xl leading-[0.95]">LISTEN<br/>TO THE<br/>DARK</h2></div>
+    </div>
+    <div class="grid lg:grid-cols-12 gap-6">
+      <aside class="lg:col-span-4 border" style="background:var(--panel);border-color:var(--border)">
+        <div class="flex items-center justify-between px-4 py-3 border-b" style="border-color:var(--border)">
+          <p class="text-[0.55rem] tracking-[0.3em] uppercase" style="color:var(--muted)">// Releases</p>
+          <p class="text-[0.55rem] tracking-[0.3em] uppercase" style="color:var(--muted)"><span id="albumCount">0</span> total</p>
+        </div>
+        <div id="albumList" class="max-h-[560px] overflow-y-auto"></div>
+      </aside>
+      <div class="lg:col-span-8"><div id="albumPlayer" class="border" style="background:var(--panel);border-color:var(--border)"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="border-b" id="catalog" style="border-color:var(--border)">
+  <div class="max-w-[1600px] mx-auto px-4 md:px-8 py-12 md:py-20">
+    <div class="breadcrumbs" style="color:var(--muted)">
+      <a href="#" class="hover:text-[#c1121f] transition">Головна</a><span>/</span>
+      <span style="color:var(--text)">Магазин</span>
+    </div>
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+      <div><p class="text-[0.6rem] tracking-[0.3em] uppercase text-[#c1121f] mb-2">// Shop</p><h2 class="gothic text-3xl md:text-5xl">CATALOG</h2></div>
+      <p class="text-[0.6rem] tracking-[0.25em] uppercase" style="color:var(--muted)">Всі товари</p>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4" id="catalogGrid"></div>
+  </div>
+</section>
+
+<section id="gallery" class="border-b noise-bg" style="border-color:var(--border)">
+  <div class="max-w-[1600px] mx-auto px-4 md:px-8 py-14 md:py-24">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+      <div><p class="text-[0.6rem] tracking-[0.3em] uppercase text-[#c1121f] mb-2">// From the pit</p><h2 class="gothic text-4xl md:text-6xl">LIVE<br/>GALLERY</h2></div>
+      <a href="https://www.instagram.com/first2diecrew/" target="_blank" rel="noopener" class="text-[0.65rem] font-bold tracking-[0.2em] uppercase hover:text-[#c1121f]" style="color:var(--muted)">@FIRST2DIECREW <span class="arrow-slide">→</span></a>
+    </div>
+    <div id="galleryGrid" class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 auto-rows-[180px] md:auto-rows-[220px]"></div>
+  </div>
+</section>
+
+<section id="community" class="border-b grid-bg" style="border-color:var(--border)">
+  <div class="max-w-[1200px] mx-auto px-4 md:px-8 py-14 md:py-24">
+    <div class="text-center mb-12">
+      <p class="text-[0.6rem] tracking-[0.3em] uppercase text-[#c1121f] mb-3">// Community</p>
+      <h2 class="gothic text-4xl md:text-6xl mb-4">ПРИЄДНУЙСЯ<br/>ДО СПІЛЬНОТИ</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+      <a href="https://discord.gg/JpAku8hVH" target="_blank" rel="noopener" class="border p-8 text-center hover:border-[#c1121f] transition-all group" style="border-color:var(--border);background:var(--panel)">
+        <div class="w-20 h-20 border flex items-center justify-center mx-auto mb-5 group-hover:border-[#c1121f] transition-all" style="border-color:var(--border)">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.5c-1.6-.7-3.3-1.3-5-1.6-.2.4-.5.9-.7 1.3-1.9-.3-3.7-.3-5.5 0-.2-.4-.5-.9-.7-1.3-1.8.3-3.5.9-5 1.6C-.3 9.5-1 14.3.5 19c1.9 1.4 3.8 2.2 5.6 2.7.5-.6.9-1.3 1.2-2-.7-.3-1.3-.6-1.9-1 .2-.1.3-.3.5-.4 3.7 1.7 7.6 1.7 11.3 0 .2.1.3.3.5.4-.6.4-1.2.7-1.9 1 .3.7.7 1.4 1.2 2 1.8-.6 3.7-1.4 5.6-2.7 1.7-5.5.6-10.2-2.3-14.5zM8 15.8c-1.1 0-2-1-2-2.3s.9-2.3 2-2.3 2 1 2 2.3-.9 2.3-2 2.3zm8 0c-1.1 0-2-1-2-2.3s.9-2.3 2-2.3 2 1 2 2.3-.9 2.3-2 2.3z"/></svg>
+        </div>
+        <p class="gothic text-2xl mb-2">Discord</p>
+        <p class="text-[0.65rem] tracking-widest uppercase mb-4" style="color:var(--muted)">Спільнота · live-чати</p>
+        <p class="text-[0.6rem] tracking-widest uppercase text-[#c1121f]">JOIN →</p>
+      </a>
+      <a href="https://www.instagram.com/first2diecrew/" target="_blank" rel="noopener" class="border p-8 text-center hover:border-[#c1121f] transition-all group" style="border-color:var(--border);background:var(--panel)">
+        <div class="w-20 h-20 border flex items-center justify-center mx-auto mb-5 group-hover:border-[#c1121f] transition-all" style="border-color:var(--border)">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        </div>
+        <p class="gothic text-2xl mb-2">Instagram</p>
+        <p class="text-[0.65rem] tracking-widest uppercase mb-4" style="color:var(--muted)">Сторіс · reels</p>
+        <p class="text-[0.6rem] tracking-widest uppercase text-[#c1121f]">FOLLOW →</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="border-t" style="border-color:var(--border)">
+  <div class="max-w-[1600px] mx-auto px-4 md:px-8 py-10 md:py-14">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <img src="https://i.postimg.cc/50YMWyV1/zobrazenna-2026-09-26-020404764-removebg-preview.png" alt="FIRST TO DIE" class="ftd-logo h-8 w-auto"/>
+      <p class="text-[0.6rem] tracking-[0.25em] uppercase" style="color:var(--muted)">© <span id="year"></span> FIRST TO DIE · Kyiv, Ukraine</p>
+    </div>
+  </div>
+</footer>
+
+<div id="cookieBanner" class="cookie-banner">
+  <div class="max-w-[1600px] mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+    <p class="text-[0.7rem] tracking-wider text-center md:text-left" style="color:var(--muted)">Ми використовуємо cookies для роботи кошика та покращення сайту.</p>
+    <div class="flex gap-2">
+      <button id="cookieDecline" class="btn-brut btn-ghost text-[0.6rem] px-4 py-2">ВІДХИЛИТИ</button>
+      <button id="cookieAccept" class="btn-brut text-[0.6rem] px-4 py-2">ПРИЙНЯТИ</button>
+    </div>
+  </div>
+</div>
+
+<button id="backToTop" aria-label="Нагору"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button>
+
+<div id="orderPage" class="order-page">
+  <div class="max-w-3xl mx-auto px-4 md:px-8 py-16 md:py-24">
+    <div class="text-center mb-12">
+      <div class="w-20 h-20 mx-auto mb-6 border-2 border-[#c9f31a] rounded-full flex items-center justify-center">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#c9f31a" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <p class="text-[0.6rem] tracking-[0.3em] uppercase text-[#c9f31a] mb-3">// Замовлення прийнято</p>
+      <h2 class="gothic text-3xl md:text-5xl mb-4">ДЯКУЄМО!</h2>
+      <p class="text-sm leading-relaxed max-w-lg mx-auto" style="color:var(--muted)">Зараз відкриється Telegram-бот — він одразу покаже твоє замовлення та спосіб оплати.</p>
+    </div>
+    <div class="border p-6 mb-6" style="background:var(--panel);border-color:var(--border)">
+      <div class="flex items-center justify-between mb-4 pb-4 border-b" style="border-color:var(--border)">
+        <div><p class="text-[0.55rem] tracking-[0.3em] uppercase mb-1" style="color:var(--muted)">// Номер замовлення</p><p id="orderId" class="display text-xl text-[#c1121f]">FTD-XXXXX</p></div>
+        <button id="copyOrderId" class="btn-brut btn-ghost text-[0.55rem] px-3 py-2">КОПІЮВАТИ</button>
+      </div>
+      <div class="grid grid-cols-2 gap-4 text-xs">
+        <div><p class="text-[0.55rem] tracking-[0.3em] uppercase mb-1" style="color:var(--muted)">Дата</p><p id="orderDate">—</p></div>
+        <div><p class="text-[0.55rem] tracking-[0.3em] uppercase mb-1" style="color:var(--muted)">Сума</p><p id="orderTotal" class="font-bold">—</p></div>
+        <div><p class="text-[0.55rem] tracking-[0.3em] uppercase mb-1" style="color:var(--muted)">Ім'я</p><p id="orderName">—</p></div>
+        <div><p class="text-[0.55rem] tracking-[0.3em] uppercase mb-1" style="color:var(--muted)">Телефон</p><p id="orderPhone">—</p></div>
+      </div>
+    </div>
+    <div class="border p-6 mb-6" style="background:var(--panel);border-color:var(--border)">
+      <p class="text-[0.55rem] tracking-[0.3em] uppercase mb-4" style="color:var(--muted)">// Склад замовлення</p>
+      <div id="orderItems" class="space-y-3"></div>
+      <div class="flex items-center justify-between mt-4 pt-4 border-t" style="border-color:var(--border)">
+        <span class="text-[0.65rem] tracking-[0.25em] uppercase" style="color:var(--muted)">Разом</span>
+        <span id="orderItemsTotal" class="display text-lg text-[#c1121f]">₴0</span>
+      </div>
+    </div>
+    <div class="text-center space-y-3">
+      <button id="sendToTelegram" class="btn-brut tg-btn w-full py-4">✈ ВІДКРИТИ TELEGRAM-БОТА</button>
+      <button id="continueShopping" class="btn-brut w-full py-3">ПРОДОВЖИТИ ПОКУПКИ →</button>
+    </div>
+  </div>
+</div>
+
+<div id="cartOverlay" class="cart-overlay hidden fixed inset-0 bg-black/80 z-50"></div>
+<div id="cartDrawer" class="cart-drawer closed fixed top-0 right-0 h-full w-full max-w-md z-50 flex flex-col border-l" style="background:var(--bg);border-color:var(--border)">
+  <div class="flex items-center justify-between px-6 py-5 border-b" style="border-color:var(--border)">
+    <div><p class="text-[0.55rem] tracking-[0.3em] uppercase" style="color:var(--muted)">// Your</p><h3 class="gothic text-lg">CART</h3></div>
+    <button id="closeCartBtn" class="p-1" style="color:var(--muted)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <div id="cartItems" class="flex-1 overflow-y-auto px-6 py-5 space-y-5"></div>
+  <div id="cartEmpty" class="flex-1 flex flex-col items-center justify-center px-6 text-center hidden">
+    <div class="w-20 h-20 border flex items-center justify-center mb-5" style="border-color:var(--border)"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#c1121f" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></div>
+    <p class="gothic text-xl mb-2">Кошик порожній</p>
+    <button onclick="closeCart(); document.getElementById('catalog').scrollIntoView({behavior:'smooth'})" class="btn-brut px-6 py-3 text-[0.65rem]">ДО КАТАЛОГУ →</button>
+  </div>
+  <div class="border-t px-6 py-6 space-y-4" style="border-color:var(--border);background:var(--panel)">
+    <div class="flex items-center justify-between"><span class="text-[0.65rem] tracking-[0.25em] uppercase" style="color:var(--muted)">Subtotal</span><span id="cartSubtotal" class="display text-xl">₴0</span></div>
+    <button id="checkoutBtn" class="btn-brut w-full py-4" disabled>CHECKOUT</button>
+  </div>
+</div>
+
+<div id="searchOverlay" class="search-overlay" role="dialog">
+  <div class="max-w-3xl mx-auto px-4 pt-24">
+    <div class="flex items-center justify-between mb-8">
+      <p class="text-[0.6rem] tracking-[0.3em] uppercase text-[#c1121f]">// Search</p>
+      <button id="closeSearchBtn" class="p-2" style="color:var(--muted)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <input id="searchInput" type="text" placeholder="TYPE TO SEARCH..." class="search-input" autocomplete="off"/>
+    <div id="searchResults" class="mt-4 max-h-[50vh] overflow-y-auto border-t" style="border-color:var(--border)"></div>
+  </div>
+</div>
+
+<div id="lightbox" class="lightbox">
+  <button class="lightbox-btn" id="lbClose" style="top:1.5rem;right:1.5rem"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <div class="text-center"><img id="lbImage" src="" alt=""/><p id="lbCaption" class="text-white text-[0.7rem] tracking-[0.2em] uppercase mt-4"></p></div>
+</div>
+
+<div id="productModal" class="modal">
+  <div class="modal-content" style="max-width:900px">
+    <div class="flex items-center justify-between px-6 py-5 border-b sticky top-0 z-10" style="border-color:var(--border);background:var(--panel)">
+      <div><p class="text-[0.55rem] tracking-[0.3em] uppercase text-[#c1121f]">// Product</p><h3 id="prodModalTitle" class="gothic text-lg truncate max-w-xs"></h3></div>
+      <button id="closeProductBtn" class="p-1" style="color:var(--muted)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="grid md:grid-cols-2 gap-0">
+      <div class="border-b md:border-b-0 md:border-r" style="background:var(--panel);border-color:var(--border)"><img id="prodModalImg" src="" class="w-full h-full object-cover"/></div>
+      <div class="p-6">
+        <p id="prodModalPrice" class="display text-2xl text-[#c1121f] mb-4"></p>
+        <p id="prodModalDesc" class="text-sm leading-relaxed mb-6" style="color:var(--muted)"></p>
+        <p id="prodModalStock" class="text-[0.65rem] tracking-widest uppercase mb-4"></p>
+        <button id="prodModalSizeGuide" class="text-[0.6rem] tracking-widest uppercase mb-6 hover:text-[#c1121f] transition" style="color:var(--muted);text-decoration:underline">📐 Таблиця розмірів</button>
+        <button id="prodModalAdd" class="btn-brut w-full py-4">ADD TO CART</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="sizeModal" class="modal">
+  <div class="modal-content" style="max-width:480px">
+    <div class="flex items-center justify-between px-6 py-5 border-b" style="border-color:var(--border)">
+      <div><p class="text-[0.55rem] tracking-[0.3em] uppercase text-[#c1121f]">// Select size</p><h3 class="gothic text-lg">РОЗМІР</h3></div>
+      <button id="closeSizeBtn" class="p-1" style="color:var(--muted)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="p-6">
+      <div class="flex gap-4 mb-6">
+        <div class="w-24 h-24 border overflow-hidden flex-shrink-0" style="background:var(--panel);border-color:var(--border)"><img id="sizeModalImg" src="" class="w-full h-full object-cover"/></div>
+        <div class="flex-1 min-w-0">
+          <p id="sizeModalTitle" class="text-[0.75rem] font-bold tracking-wider uppercase leading-snug mb-1"></p>
+          <p id="sizeModalPrice" class="text-[#c1121f] text-sm font-bold"></p>
+        </div>
+      </div>
+      <div id="sizeOptions" class="grid grid-cols-5 gap-2 mb-3"></div>
+      <p id="sizeError" class="hidden text-[0.65rem] tracking-widest uppercase text-[#e63946] mb-4">Спочатку оберіть розмір</p>
+      <button id="confirmSizeBtn" class="btn-brut w-full py-4">ДОДАТИ В КОШИК</button>
+      <button id="sizeGuideFromModal" class="btn-brut btn-ghost w-full py-3 mt-3">SIZE GUIDE / ТАБЛИЦЯ</button>
+    </div>
+  </div>
+</div>
+
+<div id="sizeGuideModal" class="modal">
+  <div class="modal-content" style="max-width:700px">
+    <div class="flex items-center justify-between px-6 py-5 border-b sticky top-0 z-10" style="border-color:var(--border);background:var(--panel)">
+      <div><p class="text-[0.55rem] tracking-[0.3em] uppercase text-[#c1121f]">// Size Guide</p><h3 class="gothic text-lg">ТАБЛИЦЯ РОЗМІРІВ</h3></div>
+      <button id="closeSizeGuideBtn" class="p-1" style="color:var(--muted)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="p-6">
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full text-xs size-guide-table">
+          <thead>
+            <tr class="border-b text-left" style="border-color:var(--border)">
+              <th class="py-3 text-[0.6rem] tracking-widest uppercase" style="color:var(--muted)">Розмір</th>
+              <th class="py-3 text-[0.6rem] tracking-widest uppercase" style="color:var(--muted)">Груди, см</th>
+              <th class="py-3 text-[0.6rem] tracking-widest uppercase" style="color:var(--muted)">Довжина, см</th>
+              <th class="py-3 text-[0.6rem] tracking-widest uppercase" style="color:var(--muted)">Рукав, см</th>
+              <th class="py-3 text-[0.6rem] tracking-widest uppercase" style="color:var(--muted)">UA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b" style="border-color:var(--border)"><td class="py-3 font-bold">S</td><td class="py-3">96</td><td class="py-3">70</td><td class="py-3">20</td><td class="py-3" style="color:var(--muted)">44-46</td></tr>
+            <tr class="border-b" style="border-color:var(--border)"><td class="py-3 font-bold">M</td><td class="py-3">102</td><td class="py-3">72</td><td class="py-3">21</td><td class="py-3" style="color:var(--muted)">46-48</td></tr>
+            <tr class="border-b" style="border-color:var(--border)"><td class="py-3 font-bold">L</td><td class="py-3">108</td><td class="py-3">74</td><td class="py-3">22</td><td class="py-3" style="color:var(--muted)">48-50</td></tr>
+            <tr class="border-b" style="border-color:var(--border)"><td class="py-3 font-bold">XL</td><td class="py-3">114</td><td class="py-3">76</td><td class="py-3">23</td><td class="py-3" style="color:var(--muted)">50-52</td></tr>
+            <tr><td class="py-3 font-bold">XXL</td><td class="py-3">120</td><td class="py-3">78</td><td class="py-3">24</td><td class="py-3" style="color:var(--muted)">52-54</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="border-t pt-4 space-y-2" style="border-color:var(--border)">
+        <p class="text-[0.65rem] tracking-wider uppercase leading-relaxed" style="color:var(--muted)"><span class="text-[#c1121f]">⚠</span> Якщо між розмірами — обирай більший</p>
+        <p class="text-[0.65rem] tracking-wider uppercase leading-relaxed" style="color:var(--muted)"><span class="text-[#c1121f]">📏</span> Заміри вручну — похибка ±2 см</p>
+        <p class="text-[0.65rem] tracking-wider uppercase leading-relaxed" style="color:var(--muted)"><span class="text-[#c1121f]">👕</span> Всі вироби Unisex — універсальний крій</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="checkoutModal" class="modal">
+  <div class="modal-content">
+    <div class="flex items-center justify-between px-6 py-5 border-b sticky top-0 z-10" style="border-color:var(--border);background:var(--panel)">
+      <div><p class="text-[0.55rem] tracking-[0.3em] uppercase text-[#c1121f]">// Checkout</p><h3 class="gothic text-lg">ORDER</h3></div>
+      <button id="closeCheckoutBtn" class="p-1" style="color:var(--muted)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <form id="checkoutForm" class="p-6 space-y-5" novalidate>
+      <div class="grid grid-cols-2 gap-4">
+        <div><label class="form-label">Ім'я *</label><input name="firstName" type="text" required class="form-input" placeholder="ІВАН"/></div>
+        <div><label class="form-label">Прізвище *</label><input name="lastName" type="text" required class="form-input" placeholder="ПЕТРЕНКО"/></div>
+      </div>
+      <div><label class="form-label">Email *</label><input name="email" type="email" required class="form-input" placeholder="IVAN@EXAMPLE.COM"/></div>
+      <div><label class="form-label">Телефон *</label><input name="phone" type="tel" required class="form-input" placeholder="+380..."/></div>
+      <div><label class="form-label">Відділення НП / Адреса *</label><input name="address" type="text" required class="form-input" placeholder="№ ВІДДІЛЕННЯ"/></div>
+      <div class="grid grid-cols-2 gap-4">
+        <div><label class="form-label">Місто *</label><input name="city" type="text" required class="form-input" placeholder="КИЇВ"/></div>
+        <div><label class="form-label">Індекс *</label><input name="zip" type="text" required class="form-input" placeholder="01001"/></div>
+      </div>
+      <div><label class="form-label">Спосіб оплати *</label>
+        <select name="payment" required class="form-input">
+          <option value="">— ОБЕРІТЬ —</option>
+          <option value="cod">Накладений платіж (НП)</option>
+          <option value="liqpay">LiqPay</option>
+          <option value="mono">Monobank</option>
+        </select>
+      </div>
+      <div class="border-t pt-5" style="border-color:var(--border)">
+        <div class="flex items-center justify-between mb-4"><span class="text-[0.65rem] tracking-[0.25em] uppercase" style="color:var(--muted)">Товари</span><span id="checkoutSubtotal" class="text-sm font-bold">₴0</span></div>
+        <div class="flex items-center justify-between border-t pt-3" style="border-color:var(--border)"><span class="text-[0.65rem] tracking-[0.25em] uppercase">Разом</span><span id="checkoutTotal" class="display text-xl text-[#c1121f]">₴0</span></div>
+      </div>
+      <p id="checkoutError" class="hidden text-[0.65rem] tracking-widest uppercase text-[#e63946]"></p>
+      <button type="submit" class="btn-brut tg-btn w-full py-4" id="placeOrderBtn">ОФОРМИТИ ТА ВІДКРИТИ TELEGRAM ✈</button>
+      <p class="text-[0.6rem] tracking-widest uppercase text-center" style="color:var(--muted)">Після оформлення відкриється бот @ftd_store_bot</p>
+    </form>
+  </div>
+</div>
+
+<div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+<script>
+const WORKER_URL = 'https://ftd-bot.kb252-mka.workers.dev';
+const TELEGRAM_BOT = 'ftd_store_bot';
+
+const CURRENCIES = { UAH:{symbol:'₴',rate:1}, USD:{symbol:'$',rate:1/41.5}, EUR:{symbol:'€',rate:1/45} };
+const KEYS = { CART:'ftd_cart_v20', CUR:'ftd_cur_v10', THEME:'ftd_theme_v10', LANG:'ftd_lang_v10', WISH:'ftd_wish_v10', COOKIE:'ftd_cookie_v10', SIZE:'ftd_size_v10', ORDERS:'ftd_orders_v10' };
+
+const REAL = {
+  p1:'https://i.postimg.cc/VsT6G74B/photo-2026-09-23-13-29-34.jpg',
+  p2:'https://i.postimg.cc/8PNX7r7H/photo-2026-09-23-13-29-36.jpg',
+  p3:'https://i.postimg.cc/4xFW2LBw/photo-2026-09-23-13-29-38.jpg',
+  p4:'https://i.postimg.cc/pdhqwfS9/photo-2026-09-23-13-29-40.jpg'
+};
+
+const PRODUCTS = [
+  { id:'p1', title:'FIRST TO DIE — КИЇВ 2026', price:850, status:'new', sizes:['S','M','L','XL','XXL'], stock:10, desc:'Артикул: FTD-TS-01. Чорний виріб з масивним графічним принтом у стилі андеграундного металкору. Спереду — велике spiky/slamming лого First To Die. Ззаду — вертикальний графічний хребет із текстами «ПЕРШОЗДОХЛИ» та «КИЇВ • 2026». 100% преміум бавовна. Шовкотрафаретний друк. Unisex, Medium Fit.', img1:REAL.p1, img2:REAL.p1 },
+  { id:'p2', title:'FIRST TO DIE — ACID YELLOW', price:1200, status:'new', sizes:['M','L','XL','XXL'], stock:8, desc:'Артикул: FTD-LS-01. Темний виріб із кислотно-жовтим принтом. Спереду — лого First To Die, триптих облич та напис «Я ЗА***РЮ ТЕБЕ НАЧЕ СКАЖЕНОГО ПСА». На рукавах — смолоскипи. 100% щільна бавовна. Еластичні манжети. Oversize / Relaxed Fit.', img1:REAL.p2, img2:REAL.p2 },
+  { id:'p3', title:'KYIV METALLIC HARDCORE — GOAT', price:800, status:'new', sizes:['S','M','L','XL'], stock:5, desc:'Артикул: KMH-TS-WHT. Білий виріб з монохромним принтом київської металкор-сцени. Спереду — хрест із потертою фактурою та рогатий цап (бафомет). Зверху — лого First To Die, знизу — «KYIV METALLIC HARDCORE». 100% бавовна. Regular Fit.', img1:REAL.p3, img2:REAL.p3 },
+  { id:'p4', title:'FIRST TO DIE x CAPTHEUNI — BLOODY NUN', price:950, status:'new', sizes:['S','M','L','XL','XXL'], stock:7, desc:'Артикул: FTD-CTU-TS. Чорний виріб у колаборації First To Die x CAPTHEUNI. Спереду — хорор-арт кривавої монахині в терновому вінку, «KYIV METALLIC HARDCORE» та лого First To Die, знизу — «CAPTHEUNI». Ззаду — окультна октаграма та ритуальний текст. Преміальна бавовна 210 gsm. Streetwear / Relaxed Fit.', img1:REAL.p4, img2:REAL.p4 }
+];
+
+const ALBUMS = [
+  {
+    id:'a1',
+    title:'ПЕРШОЗДОХЛІ ПИЗДУЮТЬ',
+    type:'ALBUM',
+    year:2025,
+    runtime:'16 min',
+    note:'Дебютний повноформатний альбом. Записаний у підвалі на Подолі. 16 хвилин чистого грайндкору без компромісів. Це маніфест київської андеграундної сцени.',
+    spotify:'https://open.spotify.com/album/2s2Wum16eimse98P176j2H',
+    embed:'https://open.spotify.com/embed/album/2s2Wum16eimse98P176j2H?utm_source=generator&theme=0',
+    featured:true
+  },
+  {
+    id:'a2',
+    title:'МІШЕНЬ',
+    type:'SINGLE',
+    year:2024,
+    runtime:'3 min',
+    note:'Сингл feat. Voracity. Записаний як колаборація з харківським репером. Про те, як система робить з людей мішені.',
+    spotify:'https://open.spotify.com/album/1Op7Uj0xEVqcmUi7rUBp4s',
+    embed:'https://open.spotify.com/embed/album/1Op7Uj0xEVqcmUi7rUBp4s?utm_source=generator&theme=0',
+    featured:false
+  },
+  {
+    id:'a3',
+    title:'ЯМА',
+    type:'SINGLE',
+    year:2024,
+    runtime:'3 min',
+    note:'Сингл. Про відчуття коли ти падаєш на саме дно і бачиш світло тільки знизу. Важкий, повільний, гнітючий.',
+    spotify:'https://open.spotify.com/album/5n1HAGA89FMaP4cxQinx4o',
+    embed:'https://open.spotify.com/embed/album/5n1HAGA89FMaP4cxQinx4o?utm_source=generator&theme=0',
+    featured:false
+  },
+  {
+    id:'a4',
+    title:'ДУЛО',
+    type:'SINGLE',
+    year:2023,
+    runtime:'2 min',
+    note:'Перший сингл гурту. Два тижні після заснування гурту в Києві. Сирий, швидкий, злий — якими ми і були на початку.',
+    spotify:'https://open.spotify.com/album/6Ym4vdgZ7Aji7DrThQCmLk',
+    embed:'https://open.spotify.com/embed/album/6Ym4vdgZ7Aji7DrThQCmLk?utm_source=generator&theme=0',
+    featured:false
+  },
+  {
+    id:'a5',
+    title:'NEW RELEASE',
+    type:'SINGLE',
+    year:2025,
+    runtime:'—',
+    note:'Опис релізу з\'явиться незабаром. Заміни назву та опис у коді на свої.',
+    spotify:'https://open.spotify.com/album/19YvnC8yMYyvvTzmZnJ4jM',
+    embed:'https://open.spotify.com/embed/album/19YvnC8yMYyvvTzmZnJ4jM?utm_source=generator&theme=0',
+    featured:false
+  }
+];
+
+let activeAlbumId = ALBUMS[0].id;
+
+const GALLERY = [
+  { src:'https://cdn.phototourl.com/member/2026-09-23-b3c28349-8025-47cc-aab8-b45563136b39.jpg', caption:'KYIV · 2025' },
+  { src:'https://cdn.phototourl.com/member/2026-09-23-8d88e336-4032-4d96-aec9-7d0f46f8f230.jpg', caption:'LVIV · 2024' },
+  { src:'https://cdn.phototourl.com/member/2026-09-23-1c7ce09f-0df7-4801-a699-c4e7f9326b74.jpg', caption:'KHARKIV · 2024' },
+  { src:'https://cdn.phototourl.com/member/2026-09-23-5213cc1e-856c-41fc-a0d3-9025d918851f.jpg', caption:'ODESA · 2024' },
+  { src:'https://cdn.phototourl.com/member/2026-09-23-8b8031d2-fb27-4c17-bfd2-69d2d04e9473.jpg', caption:'KYIV · PODIL · 2024' },
+  { src:'https://cdn.phototourl.com/member/2026-09-23-c95570c6-43f3-4103-bdad-47534ef36f3e.jpg', caption:'WARSAW · 2025' }
+];
+
+const VALIDATORS = {
+  firstName: v => v.trim().length >= 2,
+  lastName: v => v.trim().length >= 2,
+  email: v => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v),
+  phone: v => v.trim().length >= 8,
+  address: v => v.trim().length >= 3,
+  city: v => v.trim().length >= 2,
+  zip: v => /^\d{4,6}$/.test(v.trim()),
+  payment: v => v !== ''
+};
+
+let cart = [], wishlist = [];
+let currentCurrency = 'UAH';
+let lightboxIndex = 0;
+let currentTheme = 'dark', currentLang = 'ua';
+let pendingProductId = null, selectedSize = null;
+let mySize = null;
+
+const $ = id => document.getElementById(id);
+const escapeHtml = s => String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const getProduct = id => PRODUCTS.find(p => p.id === id);
+const getAlbum = id => ALBUMS.find(a => a.id === id);
+const formatPrice = uah => {
+  const c = CURRENCIES[currentCurrency];
+  return c.symbol + (uah * c.rate).toFixed(currentCurrency === 'UAH' ? 0 : 2);
+};
+const cartCount = () => cart.reduce((s,i) => s + i.qty, 0);
+const cartTotalUAH = () => cart.reduce((s,i) => {
+  const p = getProduct(i.productId);
+  return p ? s + p.price * i.qty : s;
+}, 0);
+
+function loadState() {
+  try {
+    cart = JSON.parse(localStorage.getItem(KEYS.CART) || '[]');
+    wishlist = JSON.parse(localStorage.getItem(KEYS.WISH) || '[]');
+    currentCurrency = localStorage.getItem(KEYS.CUR) || 'UAH';
+    currentTheme = localStorage.getItem(KEYS.THEME) || 'dark';
+    currentLang = localStorage.getItem(KEYS.LANG) || 'ua';
+    mySize = localStorage.getItem(KEYS.SIZE) || null;
+  } catch(e) {}
+}
+function saveState() {
+  try {
+    localStorage.setItem(KEYS.CART, JSON.stringify(cart));
+    localStorage.setItem(KEYS.WISH, JSON.stringify(wishlist));
+    localStorage.setItem(KEYS.CUR, currentCurrency);
+    localStorage.setItem(KEYS.THEME, currentTheme);
+    localStorage.setItem(KEYS.LANG, currentLang);
+    if (mySize) localStorage.setItem(KEYS.SIZE, mySize);
+  } catch(e) {}
+}
+
+function toast(msg) {
+  const c = $('toastContainer');
+  const el = document.createElement('div');
+  el.className = 'toast';
+  el.innerHTML = `<span style="flex:1">${escapeHtml(msg)}</span><button class="toast-close">✕</button>`;
+  const close = () => { el.classList.remove('show'); setTimeout(() => el.remove(), 400); };
+  el.querySelector('.toast-close').addEventListener('click', close);
+  c.appendChild(el);
+  requestAnimationFrame(() => el.classList.add('show'));
+  setTimeout(close, 3500);
+}
+
+function productCard(p) {
+  const el = document.createElement('div');
+  el.className = 'product-card clip-angle';
+  el.dataset.productId = p.id;
+  const badge = p.status === 'new' ? '<span class="badge-tag badge-new">NEW</span>' : '';
+  const isWish = wishlist.includes(p.id);
+  el.innerHTML = `
+    <div class="relative aspect-square overflow-hidden" style="background:var(--panel)">
+      <img src="${p.img1}" alt="${escapeHtml(p.title)}" class="img-a absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.src='https://placehold.co/800x800/0a0a0a/c1121f?text=FTD'"/>
+      <img src="${p.img2}" alt="${escapeHtml(p.title)}" class="img-b absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.src='https://placehold.co/800x800/0a0a0a/c1121f?text=FTD'"/>
+      <div class="absolute top-3 left-3 z-10 flex flex-col gap-1.5 items-start">${badge}</div>
+      <button class="wish-btn absolute top-3 right-3 z-20 w-8 h-8 border flex items-center justify-center transition-all ${isWish?'active':''}" style="border-color:var(--border);background:rgba(0,0,0,.6);color:#fff;font-size:14px" data-wish-id="${p.id}">${isWish?'❤':'♡'}</button>
+      <div class="absolute bottom-0 left-0 right-0 p-3 z-10 quick-add">
+        <button class="btn-brut w-full py-3 text-[0.6rem]" data-product-id="${p.id}">ADD TO CART</button>
+      </div>
+    </div>
+    <div class="p-4">
+      <h3 class="text-[0.7rem] font-bold tracking-wider leading-snug mb-2 uppercase">${escapeHtml(p.title)}</h3>
+      <div class="text-sm font-bold">${formatPrice(p.price)}</div>
+    </div>
+  `;
+  el.querySelector('.wish-btn').addEventListener('click', e => { e.stopPropagation(); toggleWishlist(p.id); });
+  return el;
+}
+
+function renderCatalog() {
+  const grid = $('catalogGrid');
+  grid.innerHTML = '';
+  PRODUCTS.forEach(p => grid.appendChild(productCard(p)));
+}
+
+function renderAlbums() {
+  const list = $('albumList');
+  list.innerHTML = '';
+  ALBUMS.forEach((a, idx) => {
+    const row = document.createElement('button');
+    row.type = 'button';
+    row.className = 'album-row w-full text-left px-4 py-4 flex items-center gap-3' + (a.id === activeAlbumId ? ' active' : '');
+    row.innerHTML = `<span class="text-[0.65rem] font-mono tracking-widest w-8" style="color:var(--muted)">${String(idx+1).padStart(2,'0')}</span>
+      <div class="flex-1 min-w-0">
+        <p class="text-[0.7rem] font-bold tracking-wider uppercase truncate">${escapeHtml(a.title)}</p>
+        <p class="text-[0.55rem] tracking-[0.25em] uppercase mt-1" style="color:var(--muted)">${a.type} · ${a.year}</p>
+      </div>
+      ${a.featured?'<span class="badge-tag badge-new text-[0.5rem]">NEW</span>':''}
+      <span class="text-xs" style="color:var(--muted)">→</span>`;
+    row.addEventListener('click', () => setActiveAlbum(a.id));
+    list.appendChild(row);
+  });
+  $('albumCount').textContent = ALBUMS.length;
+}
+
+function setActiveAlbum(id) {
+  activeAlbumId = id;
+  renderAlbums();
+  renderAlbumPlayer();
+}
+
+function renderAlbumPlayer() {
+  const wrap = $('albumPlayer');
+  const a = getAlbum(activeAlbumId);
+  if (!a) return;
+  const idx = ALBUMS.findIndex(x => x.id === a.id);
+
+  wrap.innerHTML = `
+    <div class="px-5 py-4 border-b flex items-center justify-between gap-3" style="border-color:var(--border)">
+      <div class="min-w-0">
+        <p class="text-[0.55rem] tracking-[0.3em] uppercase text-[#c1121f]">// Now playing · ${String(idx+1).padStart(2,'0')}/${String(ALBUMS.length).padStart(2,'0')}</p>
+        <p class="gothic text-lg md:text-xl truncate mt-1">${escapeHtml(a.title)}</p>
+        <p class="text-[0.6rem] tracking-[0.25em] uppercase mt-1" style="color:var(--muted)">${a.type} · ${a.year}${a.runtime && a.runtime !== '—' ? ' · ' + a.runtime : ''}</p>
+      </div>
+      <a href="${a.spotify}" target="_blank" rel="noopener" class="btn-brut text-[0.55rem] px-3 py-2 whitespace-nowrap">СЛУХАТИ <span class="arrow-slide">→</span></a>
+    </div>
+    <div class="px-5 py-4 border-b" style="border-color:var(--border)">
+      <p class="text-xs leading-relaxed" style="color:var(--muted)">${escapeHtml(a.note)}</p>
+    </div>
+    <div>
+      <iframe src="${a.embed}" width="100%" height="${a.type === 'ALBUM' ? 380 : 152}" frameborder="0" allow="autoplay;clipboard-write;encrypted-media;fullscreen;picture-in-picture" loading="lazy" style="display:block"></iframe>
+    </div>
+    <div class="px-5 py-3 border-t flex items-center justify-between text-[0.55rem] tracking-[0.25em] uppercase" style="border-color:var(--border);color:var(--muted)">
+      <button id="albumPrev" class="hover:text-[#c1121f] transition">← PREV</button>
+      <span>${idx + 1} / ${ALBUMS.length}</span>
+      <button id="albumNext" class="hover:text-[#c1121f] transition">NEXT →</button>
+    </div>`;
+  $('albumPrev').addEventListener('click', () => shiftAlbum(-1));
+  $('albumNext').addEventListener('click', () => shiftAlbum(1));
+}
+
+function shiftAlbum(dir) {
+  const idx = ALBUMS.findIndex(x => x.id === activeAlbumId);
+  const next = (idx + dir + ALBUMS.length) % ALBUMS.length;
+  setActiveAlbum(ALBUMS[next].id);
+}
+
+function renderGallery() {
+  const grid = $('galleryGrid'); grid.innerHTML = '';
+  GALLERY.forEach((item, idx) => {
+    const el = document.createElement('button');
+    el.type = 'button';
+    el.className = 'group relative overflow-hidden border cursor-pointer text-left';
+    el.style.borderColor = 'var(--border)'; el.style.background = 'var(--panel)';
+    if (idx === 0) el.classList.add('col-span-2','row-span-2');
+    if (idx === 3) el.classList.add('col-span-2');
+    el.innerHTML = `<img src="${item.src}" alt="${escapeHtml(item.caption)}" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" loading="lazy" onerror="this.parentElement.style.display='none'"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-60 group-hover:opacity-100 transition"></div>
+      <div class="absolute bottom-0 left-0 right-0 p-3"><p class="text-white text-[0.6rem] font-bold tracking-[0.2em] uppercase">${escapeHtml(item.caption)}</p></div>`;
+    el.addEventListener('click', () => openLightbox(idx));
+    grid.appendChild(el);
+  });
+}
+
+function addToCart(id, size, qty = 1) {
+  const p = getProduct(id);
+  if (!p) return;
+  if (p.sizes && p.sizes.length && !size) { openSizeModal(id); return; }
+  const key = id + '::' + (size || '');
+  const existing = cart.find(i => i.productId + '::' + (i.size || '') === key);
+  if (existing) existing.qty += qty;
+  else cart.push({ productId: id, size: size || null, qty });
+  saveState();
+  updateCartUI();
+  renderCart();
+  toast(`${p.title.slice(0,32)} додано`);
+}
+function removeFromCart(idx) { cart.splice(idx, 1); saveState(); updateCartUI(); renderCart(); }
+function changeQty(idx, d) {
+  if (!cart[idx]) return;
+  cart[idx].qty += d;
+  if (cart[idx].qty <= 0) cart.splice(idx, 1);
+  saveState(); updateCartUI(); renderCart();
+}
+function renderCart() {
+  const c = $('cartItems'); const empty = $('cartEmpty');
+  c.innerHTML = '';
+  if (!cart.length) { c.classList.add('hidden'); empty.classList.remove('hidden'); }
+  else {
+    c.classList.remove('hidden'); empty.classList.add('hidden');
+    cart.forEach((item, idx) => {
+      const p = getProduct(item.productId);
+      if (!p) return;
+      const el = document.createElement('div');
+      el.className = 'flex gap-3';
+      el.innerHTML = `<div class="w-20 h-20 border flex-shrink-0 overflow-hidden" style="border-color:var(--border);background:var(--panel)"><img src="${p.img1}" class="w-full h-full object-cover"/></div>
+        <div class="flex-1 min-w-0">
+          <p class="text-[0.65rem] font-bold tracking-wider uppercase leading-snug mb-1">${escapeHtml(p.title)}</p>
+          ${item.size ? `<p class="text-[0.55rem] uppercase mb-1" style="color:var(--muted)">Розмір: ${item.size}</p>` : ''}
+          <div class="flex items-center justify-between mt-2">
+            <div class="flex items-center border" style="border-color:var(--border)">
+              <button class="w-8 h-8 flex items-center justify-center hover:text-[#c1121f]" data-dec="${idx}">−</button>
+              <span class="w-8 text-center text-[0.7rem] font-mono">${item.qty}</span>
+              <button class="w-8 h-8 flex items-center justify-center hover:text-[#c1121f]" data-inc="${idx}">+</button>
+            </div>
+            <span class="text-[0.7rem] font-bold">${formatPrice(p.price * item.qty)}</span>
+          </div>
+        </div>
+        <button class="self-start p-2 hover:text-[#c1121f]" style="color:var(--muted)" data-rm="${idx}">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>`;
+      el.querySelector('[data-dec]').addEventListener('click', () => changeQty(idx, -1));
+      el.querySelector('[data-inc]').addEventListener('click', () => changeQty(idx, 1));
+      el.querySelector('[data-rm]').addEventListener('click', () => removeFromCart(idx));
+      c.appendChild(el);
+    });
+  }
+  updateCartTotals();
+}
+function updateCartTotals() {
+  const total = cartTotalUAH();
+  if ($('cartSubtotal')) $('cartSubtotal').textContent = formatPrice(total);
+  if ($('checkoutSubtotal')) $('checkoutSubtotal').textContent = formatPrice(total);
+  if ($('checkoutTotal')) $('checkoutTotal').textContent = formatPrice(total);
+}
+function updateCartUI() {
+  const count = cartCount();
+  const badge = $('cartCount');
+  if (badge) { badge.textContent = count; badge.style.display = count > 0 ? 'flex' : 'none'; }
+  const btn = $('checkoutBtn');
+  if (btn) btn.disabled = cart.length === 0;
+}
+function updateWishUI() {
+  const b = $('wishCountBadge');
+  if (b) { b.textContent = wishlist.length; b.style.display = wishlist.length > 0 ? 'flex' : 'none'; }
+  const bM = $('wishCountBadgeM');
+  if (bM) bM.textContent = wishlist.length;
+}
+function toggleWishlist(id) {
+  const i = wishlist.indexOf(id);
+  if (i >= 0) { wishlist.splice(i, 1); toast('Видалено з обраного'); }
+  else { wishlist.push(id); toast('Додано в обране ♥'); }
+  saveState();
+  updateWishUI();
+  document.querySelectorAll(`.wish-btn[data-wish-id="${id}"]`).forEach(b => {
+    const active = wishlist.includes(id);
+    b.classList.toggle('active', active);
+    b.textContent = active ? '❤' : '♡';
+  });
+}
+
+function openModal(id) { const m = $(id); if (m) { m.classList.add('open'); document.body.classList.add('no-scroll'); } }
+function closeModal(id) {
+  const m = $(id); if (!m) return;
+  m.classList.remove('open');
+  if (!document.querySelector('.modal.open, .search-overlay.open, .lightbox.open')) document.body.classList.remove('no-scroll');
+}
+function openCart() {
+  $('cartDrawer').classList.remove('closed');
+  $('cartDrawer').classList.add('open');
+  $('cartOverlay').classList.remove('hidden');
+  $('cartOverlay').classList.add('visible');
+  document.body.classList.add('no-scroll');
+}
+function closeCart() {
+  $('cartDrawer').classList.add('closed');
+  $('cartDrawer').classList.remove('open');
+  $('cartOverlay').classList.add('hidden');
+  $('cartOverlay').classList.remove('visible');
+  document.body.classList.remove('no-scroll');
+}
+
+function openSizeModal(id) {
+  const p = getProduct(id);
+  pendingProductId = id;
+  selectedSize = null;
+  $('sizeModalImg').src = p.img1;
+  $('sizeModalTitle').textContent = p.title;
+  $('sizeModalPrice').textContent = formatPrice(p.price);
+  const wrap = $('sizeOptions');
+  wrap.innerHTML = '';
+  p.sizes.forEach(s => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'size-option'; b.textContent = s;
+    b.addEventListener('click', () => {
+      selectedSize = s;
+      wrap.querySelectorAll('.size-option').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      $('sizeError').classList.add('hidden');
+    });
+    wrap.appendChild(b);
+  });
+  $('sizeError').classList.add('hidden');
+  openModal('sizeModal');
+}
+function confirmSizeSelection() {
+  if (!selectedSize) { $('sizeError').classList.remove('hidden'); return; }
+  mySize = selectedSize; saveState();
+  const id = pendingProductId;
+  closeModal('sizeModal');
+  addToCart(id, selectedSize);
+}
+
+function openProductModal(id) {
+  const p = getProduct(id);
+  $('prodModalTitle').textContent = p.title;
+  $('prodModalImg').src = p.img1;
+  $('prodModalPrice').textContent = formatPrice(p.price);
+  $('prodModalDesc').textContent = p.desc;
+  $('prodModalStock').textContent = p.stock <= 5 ? `● Залишилось ${p.stock} шт` : '● В наявності';
+  $('prodModalStock').style.color = p.stock <= 5 ? '#c1121f' : '#c9f31a';
+  $('prodModalAdd').dataset.productId = id;
+  openModal('productModal');
+}
+
+function openCheckout() {
+  if (!cart.length) { toast('Кошик порожній'); return; }
+  closeCart();
+  updateCartTotals();
+  openModal('checkoutModal');
+}
+
+$('checkoutForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const form = e.target;
+  const fd = new FormData(form);
+  let ok = true;
+  ['firstName','lastName','email','phone','address','city','zip','payment'].forEach(n => {
+    const f = form.elements[n];
+    const valid = VALIDATORS[n](f.value);
+    f.classList.toggle('error', !valid);
+    if (!valid) ok = false;
+  });
+  if (!ok) { $('checkoutError').textContent = '⚠ Заповніть всі поля'; $('checkoutError').classList.remove('hidden'); return; }
+  $('checkoutError').classList.add('hidden');
+
+  const orderId = 'FTD-' + Math.random().toString(36).slice(2,7).toUpperCase();
+  const total = cartTotalUAH();
+  const items = cart.map(i => {
+    const p = getProduct(i.productId);
+    return { title: p.title, qty: i.qty, size: i.size, price: formatPrice(p.price * i.qty) };
+  });
+  const order = {
+    id: orderId,
+    name: (fd.get('firstName')||'') + ' ' + (fd.get('lastName')||''),
+    email: fd.get('email')||'',
+    phone: fd.get('phone')||'',
+    address: fd.get('address')||'',
+    city: fd.get('city')||'',
+    payment: fd.get('payment')||'',
+    items, total: formatPrice(total),
+    date: new Date().toLocaleString('uk-UA')
+  };
+  window.__lastOrder = order;
+
+  try {
+    const list = JSON.parse(localStorage.getItem(KEYS.ORDERS) || '[]');
+    list.unshift(order);
+    localStorage.setItem(KEYS.ORDERS, JSON.stringify(list.slice(0,100)));
+  } catch(e) {}
+
+  $('orderId').textContent = order.id;
+  $('orderDate').textContent = new Date().toLocaleDateString('uk-UA');
+  $('orderTotal').textContent = order.total;
+  $('orderName').textContent = order.name;
+  $('orderPhone').textContent = order.phone;
+  $('orderItemsTotal').textContent = order.total;
+  $('orderItems').innerHTML = cart.map(i => {
+    const p = getProduct(i.productId);
+    return `<div class="flex items-center justify-between text-xs gap-3">
+      <div><p class="font-bold uppercase text-[0.7rem]">${escapeHtml(p.title)}</p>
+      <p class="text-[0.6rem]" style="color:var(--muted)">${i.size ? 'Розмір: '+i.size+' · ' : ''}${i.qty} шт</p></div>
+      <span class="font-bold">${formatPrice(p.price * i.qty)}</span></div>`;
+  }).join('');
+
+  cart = [];
+  saveState();
+  updateCartUI();
+  renderCart();
+  closeModal('checkoutModal');
+  form.reset();
+
+  $('orderPage').classList.add('show');
+  $('orderPage').scrollTop = 0;
+  document.body.classList.remove('no-scroll');
+
+  setTimeout(() => openBotWithOrder(order), 500);
+});
+
+async function openBotWithOrder(order) {
+  if (!order) { toast('Замовлення не знайдено'); return; }
+  try {
+    await fetch(WORKER_URL + '/order', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(order)
+    });
+  } catch(e) {
+    try { await navigator.clipboard.writeText(buildFullOrderText(order)); } catch(e) {}
+  }
+  const botUrl = `https://t.me/${TELEGRAM_BOT}?start=${encodeURIComponent(order.id)}`;
+  window.open(botUrl, '_blank', 'noopener');
+  toast('Відкриваємо Telegram-бот...');
+}
+
+function buildFullOrderText(order) {
+  const items = order.items.map(i => `• ${i.qty}× ${i.title}${i.size ? ' ('+i.size+')' : ''} — ${i.price}`).join('\n');
+  return `🔥 ЗАМОВЛЕННЯ #${order.id}\n\n👤 ${order.name}\n📱 ${order.phone}\n📍 ${order.city}, ${order.address}\n\n📦 ${items}\n\n💰 ${order.total}`;
+}
+
+function openSearch() {
+  $('searchOverlay').classList.add('open');
+  document.body.classList.add('no-scroll');
+  setTimeout(() => $('searchInput').focus(), 100);
+}
+function closeSearch() {
+  $('searchOverlay').classList.remove('open');
+  $('searchInput').value = '';
+  $('searchResults').innerHTML = '';
+  if (!document.querySelector('.modal.open, .lightbox.open, .cart-drawer.open')) document.body.classList.remove('no-scroll');
+}
+function performSearch(q) {
+  const results = $('searchResults');
+  if (!q.trim()) { results.innerHTML = ''; return; }
+  const lower = q.toLowerCase();
+  const found = PRODUCTS.filter(p => p.title.toLowerCase().includes(lower) || p.desc.toLowerCase().includes(lower));
+  if (!found.length) { results.innerHTML = '<p class="text-center text-xs uppercase py-8" style="color:var(--muted)">Нічого не знайдено</p>'; return; }
+  results.innerHTML = '';
+  found.forEach(p => {
+    const el = document.createElement('div');
+    el.className = 'search-result';
+    el.innerHTML = `<div class="w-14 h-14 border flex-shrink-0 overflow-hidden" style="border-color:var(--border)"><img src="${p.img1}" class="w-full h-full object-cover"/></div>
+      <div class="flex-1 min-w-0"><p class="text-[0.7rem] font-bold uppercase truncate">${escapeHtml(p.title)}</p>
+      <p class="text-[0.6rem] uppercase mt-1" style="color:var(--muted)">${formatPrice(p.price)}</p></div>`;
+    el.addEventListener('click', () => { closeSearch(); openProductModal(p.id); });
+    results.appendChild(el);
+  });
+}
+
+function openLightbox(idx) {
+  lightboxIndex = idx;
+  $('lbImage').src = GALLERY[idx].src;
+  $('lbCaption').textContent = GALLERY[idx].caption;
+  $('lightbox').classList.add('open');
+}
+function closeLightbox() { $('lightbox').classList.remove('open'); }
+
+function applyTheme() {
+  document.body.classList.toggle('light-mode', currentTheme === 'light');
+  const moon = $('iconMoon'), sun = $('iconSun');
+  if (moon && sun) {
+    moon.classList.toggle('hidden', currentTheme === 'light');
+    sun.classList.toggle('hidden', currentTheme !== 'light');
+  }
+}
+function toggleTheme() { currentTheme = currentTheme === 'light' ? 'dark' : 'light'; saveState(); applyTheme(); }
+function toggleLang() {
+  currentLang = currentLang === 'ua' ? 'en' : 'ua';
+  $('langLabel').textContent = currentLang.toUpperCase();
+  saveState();
+  toast(currentLang === 'en' ? 'Language: English' : 'Мова: Українська');
+}
+function setCurrency(cur) {
+  currentCurrency = cur; saveState();
+  if ($('currencySelect')) $('currencySelect').value = cur;
+  if ($('currencySelectMobile')) $('currencySelectMobile').value = cur;
+  renderCatalog(); renderCart();
+}
+
+function initCookie() {
+  if (!localStorage.getItem(KEYS.COOKIE)) setTimeout(() => $('cookieBanner').classList.add('show'), 1500);
+}
+function dismissCookie(acc) {
+  localStorage.setItem(KEYS.COOKIE, acc ? 'accepted' : 'declined');
+  $('cookieBanner').classList.remove('show');
+}
+
+document.addEventListener('click', e => {
+  const addBtn = e.target.closest('button[data-product-id]');
+  if (addBtn) { addToCart(addBtn.dataset.productId); return; }
+  const card = e.target.closest('.product-card');
+  if (card && !e.target.closest('button') && card.dataset.productId) openProductModal(card.dataset.productId);
+});
+
+document.addEventListener('keydown', e => {
+  if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal.open').forEach(m => m.classList.remove('open'));
+    closeSearch(); closeCart(); closeLightbox();
+    const op = $('orderPage'); if (op) op.classList.remove('show');
+    document.body.classList.remove('no-scroll');
+  }
+});
+
+window.addEventListener('scroll', () => {
+  const btn = $('backToTop'); if (btn) btn.classList.toggle('show', window.scrollY > 600);
+}, { passive: true });
+
+function init() {
+  loadState();
+  applyTheme();
+  if ($('langLabel')) $('langLabel').textContent = currentLang.toUpperCase();
+  if ($('currencySelect')) $('currencySelect').value = currentCurrency;
+  if ($('currencySelectMobile')) $('currencySelectMobile').value = currentCurrency;
+  if ($('year')) $('year').textContent = new Date().getFullYear();
+
+  renderCatalog();
+  renderAlbums();
+  renderAlbumPlayer();
+  renderGallery();
+  renderCart();
+  updateCartUI();
+  updateWishUI();
+  updateCartTotals();
+  initCookie();
+
+  $('hamburgerBtn')?.addEventListener('click', () => $('mobileMenu').classList.toggle('open'));
+  $('themeBtn')?.addEventListener('click', toggleTheme);
+  $('themeBtnM')?.addEventListener('click', toggleTheme);
+  $('langBtn')?.addEventListener('click', toggleLang);
+  $('langBtnM')?.addEventListener('click', toggleLang);
+  $('searchBtn')?.addEventListener('click', openSearch);
+  $('cartBtn')?.addEventListener('click', openCart);
+  $('wishlistBtn')?.addEventListener('click', () => {
+    wishlist.forEach((id, i) => setTimeout(() => addToCart(id, mySize || undefined), i * 100));
+  });
+  $('wishlistBtnM')?.addEventListener('click', () => {
+    $('mobileMenu').classList.remove('open');
+    wishlist.forEach((id, i) => setTimeout(() => addToCart(id, mySize || undefined), i * 100));
+  });
+  $('closeCartBtn')?.addEventListener('click', closeCart);
+  $('cartOverlay')?.addEventListener('click', closeCart);
+  $('checkoutBtn')?.addEventListener('click', openCheckout);
+  $('currencySelect')?.addEventListener('change', e => setCurrency(e.target.value));
+  $('currencySelectMobile')?.addEventListener('change', e => setCurrency(e.target.value));
+
+  document.querySelectorAll('#mobileMenu a').forEach(a => {
+    a.addEventListener('click', () => $('mobileMenu').classList.remove('open'));
+  });
+
+  $('closeSearchBtn')?.addEventListener('click', closeSearch);
+  $('searchInput')?.addEventListener('input', e => {
+    clearTimeout(window.__st);
+    window.__st = setTimeout(() => performSearch(e.target.value), 150);
+  });
+
+  $('lbClose')?.addEventListener('click', closeLightbox);
+  $('lightbox')?.addEventListener('click', e => { if (e.target === $('lightbox')) closeLightbox(); });
+
+  $('closeSizeBtn')?.addEventListener('click', () => closeModal('sizeModal'));
+  $('confirmSizeBtn')?.addEventListener('click', confirmSizeSelection);
+  $('sizeGuideFromModal')?.addEventListener('click', () => { closeModal('sizeModal'); openModal('sizeGuideModal'); });
+  $('closeSizeGuideBtn')?.addEventListener('click', () => closeModal('sizeGuideModal'));
+  $('prodModalSizeGuide')?.addEventListener('click', () => { closeModal('productModal'); openModal('sizeGuideModal'); });
+
+  $('closeProductBtn')?.addEventListener('click', () => closeModal('productModal'));
+  $('prodModalAdd')?.addEventListener('click', () => {
+    const id = $('prodModalAdd').dataset.productId;
+    if (!id) return;
+    closeModal('productModal');
+    addToCart(id);
+  });
+
+  $('closeCheckoutBtn')?.addEventListener('click', () => closeModal('checkoutModal'));
+
+  $('continueShopping')?.addEventListener('click', () => {
+    $('orderPage').classList.remove('show');
+    document.body.classList.remove('no-scroll');
+    document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' });
+  });
+  $('sendToTelegram')?.addEventListener('click', () => {
+    if (window.__lastOrder) openBotWithOrder(window.__lastOrder);
+  });
+  $('copyOrderId')?.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText($('orderId').textContent); toast('Скопійовано'); } catch(e) {}
+  });
+
+  $('cookieAccept')?.addEventListener('click', () => dismissCookie(true));
+  $('cookieDecline')?.addEventListener('click', () => dismissCookie(false));
+  $('backToTop')?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+else init();
+
+(function initVideoPlayer() {
+  const video = $('ftdVideo'); if (!video) return;
+  const playBtn = $('ftdPlayBtn');
+  playBtn?.addEventListener('click', () => { playBtn.style.display = 'none'; video.play().catch(()=>{}); });
+  video.addEventListener('play', () => { if (playBtn) playBtn.style.display = 'none'; $('ftdIconPlay')?.classList.add('hidden'); $('ftdIconPause')?.classList.remove('hidden'); });
+  video.addEventListener('pause', () => { $('ftdIconPlay')?.classList.remove('hidden'); $('ftdIconPause')?.classList.add('hidden'); });
+  $('ftdToggle')?.addEventListener('click', () => { if (video.paused) video.play().catch(()=>{}); else video.pause(); });
+  video.addEventListener('timeupdate', () => {
+    const pct = (video.currentTime / video.duration) * 100 || 0;
+    const prog = $('ftdProgress'); if (prog) prog.style.width = pct + '%';
+    const t = $('ftdTime'); if (t) {
+      const fmt = s => !isFinite(s) ? '0:00' : Math.floor(s/60) + ':' + String(Math.floor(s%60)).padStart(2,'0');
+      t.textContent = fmt(video.currentTime) + ' / ' + fmt(video.duration);
+    }
+  });
+  $('ftdMute')?.addEventListener('click', () => {
+    video.muted = !video.muted;
+    $('ftdIconVol')?.classList.toggle('hidden', video.muted);
+    $('ftdIconMuted')?.classList.toggle('hidden', !video.muted);
+  });
+  $('ftdFs')?.addEventListener('click', () => {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else $('ftdVideoWrap')?.requestFullscreen?.();
+  });
+})();
+</script>
+</body>
+</html>
